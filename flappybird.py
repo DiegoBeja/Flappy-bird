@@ -4,6 +4,7 @@ import pygame
 class FlappyBird:
     def __init__(self):
         pygame.init()
+        pygame.event.set_grab(False)
         self.pantalla = pygame.display.set_mode((700, 600))
         self.clock = pygame.time.Clock()
         self.fuente = pygame.font.SysFont('Impact', 50)
@@ -128,4 +129,5 @@ if __name__ == "__main__":
         juego.render()
         if muerto:
             juego.reset()
+        juego.clock.tick(60)
     pygame.quit()

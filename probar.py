@@ -11,8 +11,17 @@ model = PPO.load("Modelo/best_model")
 obs, _ = env.reset()
 
 while True:
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+
     action, _ = model.predict(obs, deterministic=True)
+
     obs, reward, done, _, _ = env.step(action)
-    clock.tick(60)
+
+    clock.tick(200)
+
     if done:
         obs, _ = env.reset()
