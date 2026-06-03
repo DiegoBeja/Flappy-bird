@@ -21,7 +21,7 @@ class FlappyBird:
     def reset(self):
         if not hasattr(self, 'mejor_puntaje'):
             self.mejor_puntaje = 0
-        if not hasattr(self, 'puntos'):  # <- agrega esta línea
+        if not hasattr(self, 'puntos'): 
             self.puntos = 0
         self.mejor_puntaje = max(self.mejor_puntaje, self.puntos)
     
